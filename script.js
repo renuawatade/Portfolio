@@ -1,68 +1,69 @@
-// Typewriter Effect (JS-based fallback or enhancement)
-document.addEventListener("DOMContentLoaded", () => {
+// SPA navigation toggling
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.nav a');
+  const sections = document.querySelectorAll('.main-content .section');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+
+      navLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+
+      sections.forEach(section => {
+        section.style.display = (section.id === targetId) ? 'block' : 'none';
+      });
+    });
+  });
+
+  sections.forEach(section => {
+    section.style.display = (section.id === 'home') ? 'block' : 'none';
+  });
+});
+
+// Typewriter effect for headline (put <span class="typewriter"></span> in your #home section)
+document.addEventListener('DOMContentLoaded', () => {
   const text = "Hello, I'm Renu Awatade";
-  const typeTarget = document.querySelector(".typewriter");
+  const typeTarget = document.querySelector('.typewriter');
   
   if (typeTarget) {
-    typeTarget.textContent = ""; // Clear original
+    typeTarget.textContent = "";
     let index = 0;
-
-    const type = () => {
+    function type() {
       if (index < text.length) {
         typeTarget.textContent += text.charAt(index);
         index++;
         setTimeout(type, 100);
       }
-    };
-
+    }
     type();
   }
 });
 
-// Scroll Spy: Highlight active nav item
-window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".navbar a");
+// Scroll to Top button
+document.addEventListener('DOMContentLoaded', function () {
+  const scrollBtn = document.createElement('button');
+  scrollBtn.textContent = "↑";
+  scrollBtn.style.position = "fixed";
+  scrollBtn.style.bottom = "20px";
+  scrollBtn.style.right = "20px";
+  scrollBtn.style.padding = "10px 15px";
+  scrollBtn.style.fontSize = "18px";
+  scrollBtn.style.border = "none";
+  scrollBtn.style.borderRadius = "8px";
+  scrollBtn.style.background = "#007BFF";
+  scrollBtn.style.color = "#fff";
+  scrollBtn.style.cursor = "pointer";
+  scrollBtn.style.display = "none";
+  scrollBtn.style.zIndex = "999";
+  document.body.appendChild(scrollBtn);
 
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
   });
-});
-
-// Optional: Scroll to Top Button
-const scrollBtn = document.createElement("button");
-scrollBtn.textContent = "↑";
-scrollBtn.style.position = "fixed";
-scrollBtn.style.bottom = "20px";
-scrollBtn.style.right = "20px";
-scrollBtn.style.padding = "10px 15px";
-scrollBtn.style.fontSize = "18px";
-scrollBtn.style.border = "none";
-scrollBtn.style.borderRadius = "8px";
-scrollBtn.style.background = "#007BFF";
-scrollBtn.style.color = "#fff";
-scrollBtn.style.cursor = "pointer";
-scrollBtn.style.display = "none";
-scrollBtn.style.zIndex = "999";
-
-document.body.appendChild(scrollBtn);
-
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-window.addEventListener("scroll", () => {
-  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
 });

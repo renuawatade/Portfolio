@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Renu Awatade | Developer</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
   <div class="container">
@@ -15,38 +18,102 @@
         <h2>Renu Awatade</h2>
         <p class="tagline">Electronics and Telecommunication Engineer</p>
         <div class="socials">
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/renuu200" target="_blank" title="Twitter"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://github.com/renuawatade" target="_blank" title="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://www.linkedin.com/in/renu-awatade-7509b025a" target="_blank" title="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
         </div>
       </div>
       <nav class="nav">
         <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
         <a href="#about"><i class="fas fa-user"></i> About</a>
         <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
-        <a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a>
+        <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
         <a href="#services"><i class="fas fa-cogs"></i> Services</a>
         <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
       </nav>
     </aside>
 
-    <main class="main-content" id="home">
-      <section class="hero top-left-intro">
-        <div class="word-fade">
-          <div class="word-line">
-            <span class="word">Renu</span>
-            <span class="word">Awatade</span>
+    <main class="main-content">
+      <!-- Home Section -->
+      <section id="home" class="section">
+        <div class="hero top-left-intro">
+          <div class="intro-stack">
+            <span class="intro-name">RenuAwatade</span>
+            <span class="intro-role">Developer</span>
+            <span class="intro-skill">Java</span>
+            <span class="intro-skill">JavaScript</span>
+            <span class="intro-skill">MySql</span>
           </div>
-          <div class="word-line">
-            <span class="word blue">Developer</span>
-            <span class="word blue">|</span>
-            <span class="word blue">Java</span>
-            <span class="word blue">&</span>
-            <span class="word blue">JavaScript MySql</span>
-          </div>
+          <!-- Optional Typewriter span if you want animated headline -->
+          <!-- <span class="typewriter"></span> -->
         </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section" style="display:none;">
+        <h1 class="about-title">About Me</h1>
+        <div class="about-content">
+          <p>
+            <strong>I'm <span class="name-highlight">Renu Awatade</span></strong>, an Electronics and Telecommunication Engineering graduate with a strong passion for software development.
+            I specialize in <span class="skill">Java</span>, <span class="skill">MySQL</span>, and <span class="skill">full-stack development</span>.
+          </p>
+          <ul class="project-list">
+            <li>Room Booking System – Java + MySQL with secure login.</li>
+            <li>GPS-based Women’s Safety Device.</li>
+            <li>Smart Parking System using VLSI design.</li>
+          </ul>
+          <p>
+            <span class="highlight">Open to work</span> and eager to contribute to real-world tech solutions that make a difference.
+          </p>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="section" style="display:none;">
+        <h2>Resume</h2>
+        <iframe src="Renu Awatade.pdf" width="100%" height="600px" style="border:none;"></iframe>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section" style="display:none;">
+        <h2>Projects</h2>
+        <div class="project">
+          <h3>Room Booking System</h3>
+          <p>Java + MySQL-based booking system with password hashing and secure login.</p>
+          <a href="https://github.com/renuawatade/room-booking-system" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+          <h3>Women’s Safety System</h3>
+          <p>GPS + GSM-based emergency alert system using fingerprint verification.</p>
+          <a href="https://github.com/renuawatade/women-safety-system" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project">
+          <h3>Smart Parking Management (VLSI)</h3>
+          <p>Simulated on Xilinx. Includes overstaying, entry-exit, and motion sensors.</p>
+          <a href="https://github.com/renuawatade/NextLearn" target="_blank">View on GitHub</a>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="section" style="display:none;">
+        <h2>Services</h2>
+        <p>Describe your services here.</p>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section" style="display:none;">
+        <h2>Contact</h2>
+        <p>Contact information and/or a form goes here.</p>
       </section>
     </main>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
